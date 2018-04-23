@@ -47,9 +47,11 @@ sudo update-rc.d superscript defaults
 
 ### Configuring and Starting the Switch
 
-    Add a new bridge
+    #### Add a new bridge
     ovs-vsctl add-br br0
+    
     Connect USB-to-ethernet to the pi. Note their interface names; say it’s eth1, eth2, and eth3
+    
     ##### Connect the interfaces to the bridge  	
     ovs-vsctl add-port br0 eth1
     ovs-vsctl add-port br0 eth2
