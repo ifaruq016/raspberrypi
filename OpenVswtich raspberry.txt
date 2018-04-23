@@ -4,12 +4,13 @@ tar -xvzf openvswitch-2.5.2.tar.gz
 cd openvswitch-2.5.2
 
 ### Install all dependencies:
-sudo apt-get install python-simplejson python-qt4 libssl-dev python-twisted-conch automake autoconf gcc uml-utilities libtool build-essential pkg-config
+sudo apt install python-simplejson python-qt4 libssl-dev python-twisted-conch automake autoconf gcc uml-utilities libtool build-essential pkg-config
+sudo apt install linux-headers-3.10-3-rpi
 
 ### Build openvswitch:
 ./configure
-make -j4
-make -j4 install
+make
+make install
 
 ### Set up local variables:
 cd datapath/linux/
@@ -17,7 +18,7 @@ modprobe openvswitch
 cd ../..
 touch /usr/local/etc/ovs-vswitchd.conf
 mkdir -p /usr/local/etc/openvswitch
-ovsdb-tool create /usr/local/etc/openvswitch/conf.db vswitchd/vswitch.ovsschema
+./openvswitch-2.9.0/vsdb/ovsdb-tool create /usr/local/etc/openvswitch/conf.db vswitchd/vswitch.ovsschema
 
 
 ### Create starting file:
