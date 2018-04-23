@@ -1,8 +1,8 @@
 # raspberrypi
 ### Download and unarchive openvswitch:
-wget http://openvswitch.org/releases/openvswitch-2.5.0.tar.gz
-tar -xvzf openvswitch-2.5.0.tar.gz
-cd openvswitch-2.5.0
+wget http://openvswitch.org/releases/openvswitch-2.5.2.tar.gz
+tar -xvzf openvswitch-2.5.2.tar.gz
+cd openvswitch-2.5.2
 
 ### Install all dependencies:
 sudo apt-get install python-simplejson python-qt4 libssl-dev python-twisted-conch automake autoconf gcc uml-utilities libtool build-essential pkg-config
