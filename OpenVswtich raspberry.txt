@@ -44,3 +44,22 @@ ovs-vswitchd --pidfile --detach
 /etc/init.d/superscript
 sudo chmod 755 /etc/init.d/superscript
 sudo update-rc.d superscript defaults
+
+### Configuring and Starting the Switch
+
+    Add a new bridge
+    ovs-vsctl add-br br0
+    Connect USB-to-ethernet to the pi. Note their interface names; say it’s eth1, eth2, and eth3
+    ##### Connect the interfaces to the bridge  	
+    ovs-vsctl add-port br0 eth1
+    ovs-vsctl add-port br0 eth2
+    ovs-vsctl add-port br0 eth3
+    
+    #### Turn on the interfaces
+    ifconfig eth1 0 up
+    ifconfig eth2 0 up
+    ifconfig eth3 0 up
+    #### Connect the switch to an external controller. I used a Ryu controller.
+    ovs-vsctl set-controller br0 tcp:10.10.20.20:6633
+
+### The OpenFlow switch is now running.
