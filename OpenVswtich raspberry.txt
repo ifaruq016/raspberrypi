@@ -7,7 +7,7 @@ cd openvswitch-2.5.2
 sudo apt install python-simplejson python-qt4 libssl-dev python-twisted-conch automake autoconf gcc uml-utilities libtool build-essential pkg-config
 sudo apt install linux-headers-3.10-3-rpi
 
-### Build openvswitch:
+### Build openvswitch: (in openvswitch folder)
 ./configure
 make
 make install
