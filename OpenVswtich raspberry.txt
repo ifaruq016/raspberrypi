@@ -1,14 +1,14 @@
 ### Download and unarchive openvswitch:
-wget http://openvswitch.org/releases/openvswitch-2.5.2.tar.gz
-tar -xvzf openvswitch-2.5.2.tar.gz
-cd openvswitch-2.5.2
+wget http://openvswitch.org/releases/openvswitch-2.5.4.tar.gz
+tar -xvzf openvswitch-2.5.4.tar.gz
+cd openvswitch-2.5.4
 
 ### Install all dependencies:
 sudo apt install python-simplejson python-qt4 libssl-dev python-twisted-conch automake autoconf gcc uml-utilities libtool build-essential pkg-config
 sudo apt install linux-headers-3.10-3-rpi
 
 ### Build openvswitch: (in openvswitch folder)
-./configure
+./configure --with-linux=/lib/modules/3.10-3-rpi/build
 make
 make install
 
@@ -18,7 +18,7 @@ modprobe openvswitch
 cd ../..
 touch /usr/local/etc/ovs-vswitchd.conf
 mkdir -p /usr/local/etc/openvswitch
-./openvswitch-2.9.0/vsdb/ovsdb-tool create /usr/local/etc/openvswitch/conf.db vswitchd/vswitch.ovsschema
+./openvswitch-2.5.4/vsdb/ovsdb-tool create /usr/local/etc/openvswitch/conf.db vswitchd/vswitch.ovsschema
 
 
 ### Create starting file:
