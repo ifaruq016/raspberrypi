@@ -1,0 +1,19 @@
+==============================================================================================
+*Konfig pada switch raspberry
+
+#lakukan git clone pada untuk mendapatkan node-exporter
+git clone https://github.com/omodoong/ev-monsys.git
+
+#edit di semua PiSwitch
+cd /etc/
+sudo nano rc.local
+
+#ethernet yang digunakan dapat disesuaikan
+## edit 
+ifconfig eth0:down;
+ifconfig eth0: 10.11.12.2;
+ifconfig eth0: up;
+./home/pi/ev-monsys/node_exporter &
+
+================================================================================================
+
