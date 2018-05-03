@@ -1,0 +1,25 @@
+# Install Ryu Controller
+## Lakukan update dan upgrade
+sudo apt-get update
+sudo apt-get upgrade
+
+# Install dependancie 
+sudo apt-get istall python-pip python-dev python-dev python-webob python-paramiko python-eventlet python-routes
+
+#install git untuk mengambil file pada gihub
+sudo apt-get install git
+
+#git clone untuk mengambil file
+git clone http://github.com/osrg/ryu.git
+
+sudo pip install ryu
+
+cd ryu
+
+sudo su
+
+pytho setup.py install
+
+pip install six --upgrade
+
+ryu-manager --version
