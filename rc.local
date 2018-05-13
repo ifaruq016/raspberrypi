@@ -1,0 +1,13 @@
+##edit /etc/rc.local
+sudo nano /etc/rc/local
+
+    # add a script 
+    sudo ifconfig eth0 10.11.12.2/8
+    sudo ifconfig eth1 10.11.12.12/8
+    sudo ifconfig eth2 10.11.12.22/8
+    sudo ifconfig eth3 192.168.10.1/24
+    ./home/pi/openvswitch/2.5.4/ovs_script.sh
+    ./home/pi/ev-monsys/node_exporter &
+    
+----------------------------------------------------------------------------------
+
