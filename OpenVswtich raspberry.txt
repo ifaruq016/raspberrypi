@@ -46,3 +46,11 @@ ovs-vswitchd --pidfile --detach
 sudo chmod 755 /etc/init.d/superscript
 sudo update-rc.d superscript defaults
 
+
+##if ovsdb server cannot start
+#the error (ovsdb-server: /usr/local/var/run/openvswitch/ovsdb-server.pid.tmp: create failed (No such file or directory)
+#ovs-vsctl: unix:/usr/local/var/run/openvswitch/db.sock: database connection failed (No such file or directory)
+#ovs-vswitchd: /usr/local/var/run/openvswitch/ovs-vswitchd.pid.tmp: create failed (No such file or directory)
+#)
+sudo /usr/local/share/openvswitch/scripts/ovs-ctl start
+
