@@ -1,0 +1,24 @@
+#How to setting Zodiac  FX
+## connect the power usb of zodiac FX to your pc (for config)
+## If you use Linux check the connection zodiac FX and your PC 
+me@ubuntu ~ $ dmesg
+
+#search where the USB to zodiac FX
+#on ubuntu usually the USB like this 
+	[ 2746.160745] cdc_acm 2-2:1.0: ttyACM0: USB ACM device
+
+#Create a file /etc/minicom/minirc.zodiacfx containing
+
+	pu port /dev/ttyACM0
+	pu mhangup
+	pu showspeed 1
+
+#Save the file 
+
+#Plug the USB zodiac FX and Start the minicom
+
+	sudo minicom zodiacfx
+
+#Press enter will bring up you in teh zodiac FX Logo and prompt
+
+	Zodiac_FX#
