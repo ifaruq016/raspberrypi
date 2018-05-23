@@ -4,7 +4,7 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # Install dependancie 
-sudo apt-get istall python-pip python-dev python-dev python-webob python-paramiko python-eventlet python-routes
+sudo apt-get install python-pip python-dev python-dev python-webob python-paramiko python-eventlet python-routes
 
 #install git untuk mengambil file pada gihub
 sudo apt-get install git
@@ -13,13 +13,9 @@ sudo apt-get install git
 git clone http://github.com/osrg/ryu.git
 
 sudo pip install ryu
-
 cd ryu
+sudo python setup.py install
+sudo pip install six --upgrade
 
-sudo su
-
-pytho setup.py install
-
-pip install six --upgrade
-
+#check your ryu version
 ryu-manager --version
